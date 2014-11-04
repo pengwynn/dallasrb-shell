@@ -1,8 +1,7 @@
 # encoding: utf-8
 
 block <<-EOS
-  #{ " CRAFT YOUR OWN FRONT END WORKFLOW ".inverse }
-  #{ faux_terminal("IN THE SHELL") }
+  #{ " CRAFT YOUR OWN WORKFLOW".inverse }#{ faux_terminal("IN THE SHELL") }
 
   #{b "Wynn Netherland".upcase }
   @pengwynn 🐧
@@ -53,7 +52,7 @@ heading b("TextMate")
 
 heading "#{b("Rails")}-y scripts"
 
-block <<-EOS
+diagram <<-EOS
 script/generate          ─┐
 script/console            │
 script/server             ├── 5x the Terminal.app
@@ -66,6 +65,8 @@ heading "Sass & Compass"
 heading b("Sass") + ": CSS with superpowers"
 
 heading b("Compass") + ": Sass framework for CSS3, sprites, & more"
+
+image "images/scia.png"
 
 heading "A new platform brought #{"new friends".bright}."
 
@@ -125,7 +126,7 @@ heading "Then I discovered tmux."
 
 heading "A terminal multiplexer."
 
-block <<-EOS
+diagram <<-EOS
 ┌───────────────────────┬─────────────┐
 │                       │             │
 │                       │    pane 1   │
@@ -140,7 +141,7 @@ block <<-EOS
 #{"[ window 0 ]".bright} [ window 1 ] ...
 EOS
 
-block <<-EOS
+diagram <<-EOS
 ┌───────────────────────┬─────────────┐
 │                       │             │
 │                       │     SSH     │
@@ -151,6 +152,44 @@ block <<-EOS
 │                       │    SHELL    │
 │                       │             │
 │                       │             │
+└───────────────────────┴─────────────┘
+#{"[ editor ]".bright} [ console ] ...
+EOS
+
+diagram <<-EOS
+
+
+   ┌────────────────────────┬─────────────┐
+  ┌───────────────────────┬─────────────┐ │
+┌───────────────────────┬─────────────┐ │ │
+│                       │             │ │ │
+│                       │     SSH     │ │ │
+│                       │             │ │─┤
+│                       │             │─┤ │
+│         VIM           ├─────────────┤ │ │
+│                       │             │ │ │
+│                       │    SHELL    │ │ │
+│                       │             │ │─┘
+│                       │             │─┘
+└───────────────────────┴─────────────┘
+#{"[ editor ]".bright} [ console ] ...
+EOS
+
+diagram <<-EOS
+      #{" Stateful, per-project workspaces. ".inverse}
+
+   ┌────────────────────────┬─────────────┐
+  ┌───────────────────────┬─────────────┐ │
+┌───────────────────────┬─────────────┐ │ │
+│                       │             │ │ │
+│                       │     SSH     │ │ │
+│                       │             │ │─┤
+│                       │             │─┤ │
+│         VIM           ├─────────────┤ │ │
+│                       │             │ │ │
+│                       │    SHELL    │ │ │
+│                       │             │ │─┘
+│                       │             │─┘
 └───────────────────────┴─────────────┘
 #{"[ editor ]".bright} [ console ] ...
 EOS
@@ -195,32 +234,29 @@ heading "Stop porting your favorite color scheme."
 heading "Switch between projects with ease."
 heading "Automate tedious tasks."
 heading "Customize and extend your tools."
+heading "The same environment for all your #{" Ruby ".inverse }#{"_ ".inverse.blink }      "
 heading "The same environment for all your #{" CSS ".inverse }#{"_ ".inverse.blink }       "
 heading "The same environment for all your #{" SCSS ".inverse }#{"_ ".inverse.blink }      "
 heading "The same environment for all your #{" JavaScript ".inverse }#{"_ ".inverse.blink }"
-heading "The same environment for all your #{" Ruby ".inverse }#{"_ ".inverse.blink }      "
 heading "The same environment for all your #{" Go ".inverse }#{"_ ".inverse.blink }        "
 heading "The same environment for all your #{" words ".inverse }#{"_ ".inverse.blink }     "
 
 heading ("[ Show and tell time. ]")
 heading b("zsh")
-### globbing
-### auto escaping
-### tetris
+subheading 'globbing **/*'
+subheading 'auto escaping \?foo\=bar'
+subheading "tetris"
 heading github("robbyrussell/oh-my-zsh")
 
-heading "pure"
+heading b("pure")
 heading github("sindresorhus/pure")
-### simple
-### return code
-### timestamp
 
 heading b("tmux")
-### windows
-### panes
-### splitting
-### session chooser
-### tree chooser
+subheading "windows"
+subheading "panes"
+subheading "splitting"
+subheading "session chooser"
+subheading "tree chooser"
 
 heading b("Vim")
 heading b("Git")
@@ -270,15 +306,6 @@ heading "Scripting workflows."
 heading "dotfiles.github.com"
 
 heading github("jasonrudolph/keyboard")
-
-block <<-EOS
-Jekyll
-Yeoman
-Middleman
-Bower
-EOS
-
-image "images/scia.png"
 
 # --- fin -------------------------------------------------------------
 

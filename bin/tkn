@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 #
-# Lifted from @fxn http://github.com/fxn/tkn
+# Lifted and expanded from @fxn http://github.com/fxn/tkn
 
 Encoding.default_internal = "UTF-8"
 
@@ -63,6 +63,10 @@ end
 
 def block(content)
   slide(content, :block)
+end
+
+def diagram(content)
+  slide(content, :diagram)
 end
 
 def code(content, lexer=:ruby)
@@ -172,6 +176,11 @@ def image?(slide)
   slide && slide[:format] == :image
 end
 
+# Is this slide a diagram?
+def diagram?(slide)
+  slide && slide[:format] == :diagram
+end
+
 def clear_slide(slide)
   clear_background_image if image?(slide)
   print clear_screen
@@ -235,6 +244,7 @@ def render_block(content)
     cursor_at(row, col).tap { row += 1 }
   end
 end
+alias :render_diagram :render_block
 
 # Renders an image in the terminal by setting it as background (only works with iTerm2).
 def render_image(image_path)
@@ -286,7 +296,8 @@ loop do
   else
     render(slide).each_char do |c|
       print c
-      sleep 0.002 # old-school touch: running cursor
+      # old-school touch: running cursor
+      sleep 0.002 unless diagram?(slide)
     end
   end
 
@@ -295,9 +306,9 @@ loop do
     n += 1
   when 'b', 'p', 'h', 'k', "\e[5~"
     n -= 1
-  when '^'
+  when '^', 'K'
     n = 0
-  when '$'
+  when '$', 'J'
     n = $slides.length - 1
   when 'c'
     clear_slide(slide)
