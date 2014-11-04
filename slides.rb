@@ -133,6 +133,8 @@ heading "Then I discovered tmux."
 heading "A terminal multiplexer."
 
 diagram <<-EOS
+
+
 ┌───────────────────────┬─────────────┐
 │                       │             │
 │                       │    pane 1   │
@@ -148,6 +150,8 @@ diagram <<-EOS
 EOS
 
 diagram <<-EOS
+
+
 ┌───────────────────────┬─────────────┐
 │                       │             │
 │                       │     SSH     │
@@ -163,8 +167,6 @@ diagram <<-EOS
 EOS
 
 diagram <<-EOS
-
-
    ┌────────────────────────┬─────────────┐
   ┌───────────────────────┬─────────────┐ │
 ┌───────────────────────┬─────────────┐ │ │
@@ -182,21 +184,19 @@ diagram <<-EOS
 EOS
 
 diagram <<-EOS
-      #{" Stateful, per-project workspaces. ".inverse}
-
    ┌────────────────────────┬─────────────┐
   ┌───────────────────────┬─────────────┐ │
-┌───────────────────────┬─────────────┐ │ │
-│                       │             │ │ │
-│                       │     SSH     │ │ │
-│                       │             │ │─┤
-│                       │             │─┤ │
-│         VIM           ├─────────────┤ │ │
-│                       │             │ │ │
-│                       │    SHELL    │ │ │
-│                       │             │ │─┘
-│                       │             │─┘
-└───────────────────────┴─────────────┘
+┌─────────────────────────────────────┐ │ │
+│                                     │ │ │
+│                                     │ │ │
+│                                     │ │─┤
+│                                     │─┤ │
+| #{" Stateful, per-project workspaces. ".inverse} │ │ │
+│                                     │ │ │
+│                                     │ │ │
+│                                     │ │─┘
+│                                     │─┘
+└─────────────────────────────────────┘
 #{"[ editor ]".bright} [ console ] ...
 EOS
 
@@ -267,6 +267,11 @@ subheading "tree chooser"
 heading b("Vim")
 heading b("Git")
 heading b("*nix")
+subheading b("grep")
+subheading "#{"ack".bright} is 'better than grep'"
+subheading "#{"ack".bright} --thppt"
+subheading "#{"ag".bright } is faster than ack"
+
 
 heading b("Customization")
 
@@ -285,6 +290,7 @@ heading github("tpope")
 
 heading "vim + tmux = #{"<3".color(:red)}"
 heading "#{b("@mislav's")} hack for seamless navigation"
+heading github("jasonrudolph/keyboard")
 
 heading "Customizing Git"
 heading "aliases"
@@ -305,13 +311,32 @@ EOS
 
 code func, :bash
 
+heading "Test groove"
+heading github("tpope/vim-ruby")
+heading github("guard/guard")
+subheading "See also :Dispatch"
+heading github("tpope/vim-dispatch")
 
 heading "Scripting workflows."
-### ls bin
+subheading "ls ~/bin"
+subheading "grc"
+heading github("mislav/coral")
 
-heading "dotfiles.github.com"
+heading b("Bootstrapping your battlestation")
+subheading "boxen.github.com".underline
+subheading "dotfiles.github.com".underline
 
-heading github("jasonrudolph/keyboard")
+heading b("Bootstrapping your project")
+subheading "script/bootstrap"
+subheading "script/server"
+subheading "script/console"
+subheading "script/test"
+subheading "script/guard"
+
+heading " Just for fun. ".inverse
+heading github("pengwynn/rdio-cli")
+heading github("sferik/t")
+heading github("DTVD/rainbowstream")
 
 # --- fin -------------------------------------------------------------
 
