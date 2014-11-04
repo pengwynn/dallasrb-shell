@@ -110,7 +110,13 @@ heading "⌘C, ⌘V ,⌘S"
 heading "↑ ↓ ← →"
 heading "↑ ↑ ↓ ↓ ← → ← → B A"
 
-heading "alias vim=\"mvim -m\""
+block <<-EOS
+#{" Use MacVim in the terminal with this one cool trick. ".inverse }
+
+                  alias vim="mvim -m"
+
+
+EOS
 
 image "images/solarized.png"
 
