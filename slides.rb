@@ -4,7 +4,7 @@ block <<-EOS
   #{ " CRAFT YOUR OWN WORKFLOW".inverse }#{ faux_terminal("IN THE SHELL") }
 
   #{b "Wynn Netherland".upcase }
-  @pengwynn 🐧
+  @pengwynn
 
   #{"Dallas.rb".color("#999999") }
 EOS
@@ -293,6 +293,7 @@ heading "#{b("@mislav's")} hack for seamless navigation"
 heading github("jasonrudolph/keyboard")
 
 heading "Customizing Git"
+heading github("github/hub")
 heading "aliases"
 heading "git-*"
 
