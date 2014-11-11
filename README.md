@@ -11,11 +11,11 @@ First, clone the repository:
 
 Next install the dependencies:
 
-    bundle install
+    script/bootstrap
 
 Run the slideshow:
 
-    bin/tkn slides.rb
+    script/run
 
 Question? Feedback? [Drop me a line][contact].
 
